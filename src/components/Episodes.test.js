@@ -2,39 +2,6 @@ import React from 'react';
 import {queryAllByTestId, render} from '@testing-library/react';
 import Episodes from './Episodes';
 
-const testEpisodesData = {
-    //this is an object with seasons as properties that hold an array of episode objects
-    'Season 100': [ 
-        {
-            id: 123456,
-            image: {
-                medium: "img-med.jpg", 
-                original: "img-og.jpg"
-            },
-            name: "EPISODE TITLE",
-            number: 22,
-            runtime: 120,
-            season: 100,
-            summary: "<p>boom badda boom.</p>",
-        }
-    ],
-    'Season 101': [ 
-        {
-            id: 234567,
-            image: {
-                medium: "img-med.jpg", 
-                original: "img-og.jpg"
-            },
-            name: "ANOTHER TITLE",
-            number: 23,
-            runtime: 120,
-            season: 101,
-            summary: "<p>yadda yadda yap yap.</p>",
-        }
-    ]
-   
-}
-
 const testSelectedData = 
     [
         {

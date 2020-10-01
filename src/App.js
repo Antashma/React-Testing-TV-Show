@@ -18,9 +18,12 @@ export default function App() {
         setShow(res.data);
         setSeasons(formatSeasons(res.data._embedded.episodes));
       })
+      .catch(err => {
+        console.error('😮THE FOLLOWING ERROR OCCURED:', err.message)
+      })
   }, []);
 
-  console.log('episodes', episodes)
+  //console.log('episodes', episodes)
 
   const handleSelect = e => {
     setSelectedSeason(e.value);
@@ -36,11 +39,15 @@ export default function App() {
       <h1>{show.name}</h1>
       {parse(show.summary)}
       <Dropdown
+        data-testid='TESTdropdown'
         options={Object.keys(seasons)}
         onChange={handleSelect}
         value={selectedSeason || "Select a season"}
         placeholder="Select an option"
-      />
+      >
+        <div data-testid='TESTdropdown'
+></div>
+      </Dropdown>
       <Episodes episodes={episodes} />
     </div>
   );
